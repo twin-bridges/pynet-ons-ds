@@ -28,6 +28,14 @@ git commit -m "Removin ex1_strings.py
 ```
 
 
+## View status of repository and pending changes
+```
+git status
+git log
+git log <file_name>
+```
+
+
 ## Push changes to remote repository
 ```
 git push origin master  
@@ -62,7 +70,6 @@ git branch -u origin/develop        # Set current branch to track origin/develop
 
 ## Misc
 ```
-git status                          # View the status of the repository  
 git log                             # View the commit log  
 git log -p -1                       # Show the changes in the last commit  
 git stash                           # Temporarily save uncommitted changes  
