@@ -31,8 +31,8 @@ git commit -m "Removin ex1_strings.py
 ## View status of repository and pending changes
 ```
 git status
-git log
-git log <file_name>
+git diff 
+git diff <file_name>
 ```
 
 
