@@ -21,18 +21,19 @@ git commit -m "Adding my_file.py"
 ```
 
 
-## Remove a file
+## Remove a file/directory
 ```
 git rm ex1_strings.py  
+git rm -r <directory>
 git commit -m "Removin ex1_strings.py  
 ```
 
 
 ## View status of repository and pending changes
 ```
-git status
-git diff 
-git diff <file_name>
+git status  
+git diff  
+git diff <file_name>  
 ```
 
 
