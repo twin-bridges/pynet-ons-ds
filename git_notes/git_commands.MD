@@ -4,7 +4,6 @@
 ```
 git config --global user.name "John Doe"  
 git config --global user.email "jdoe@domain.com"  
-git config --global github.user jdoe  
 ```
 
 
