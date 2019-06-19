@@ -15,6 +15,6 @@ patterns = {
 for label, pattern in patterns.items():
     match = re.search(pattern, output)
     if match:
-        print("\n{}: ".format(label))
-        print("Packets: {}".format(match.group("pkts")))
-        print("Bytes: {}\n".format(match.group("bytes")))
+        print(f"\n{label}: ")
+        print(f"Packets: {match.group('pkts')}")
+        print(f"Bytes: {match.group('bytes')}\n")
