@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 
 import pexpect
-import time
 from getpass import getpass
 
-ip_addr = raw_input("Enter IP address: ")
+ip_addr = input("Enter IP address: ")
 username = "pyclass"
 password = getpass()
 port = 22
@@ -23,5 +22,5 @@ ssh_conn.sendline("show ip int brief")
 ssh_conn.expect("#")
 
 print("\n>>>>")
-print(ssh_conn.before)
+print(ssh_conn.before.decode())
 print(">>>>\n")

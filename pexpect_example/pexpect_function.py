@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 """Use Pexpect to retrieve the output of 'show ip int brief'."""
-from __future__ import print_function
-from __future__ import unicode_literals
-
 import pexpect
 import time
 from getpass import getpass
@@ -35,7 +32,7 @@ def main():
     """
     Use Pexpect to retrieve the output of 'show ip int brief'
     """
-    ip_addr = raw_input("Enter IP address: ")
+    ip_addr = input("Enter IP address: ")
     username = "pyclass"
     port = 22
 
@@ -52,7 +49,7 @@ def main():
     ssh_conn.expect(prompt)
 
     print("\n>>>>")
-    print(ssh_conn.before)
+    print(ssh_conn.before.decode())
     print(">>>>\n")
 
 

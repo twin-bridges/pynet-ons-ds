@@ -29,7 +29,7 @@ def find_prompt(ssh_conn):
     time.sleep(1)
     ssh_conn.expect("#")
     prompt = ssh_conn.before + ssh_conn.after
-    return prompt.strip()
+    return prompt.decode().strip()
 
 
 def disable_paging(ssh_conn, pattern="#", cmd="terminal length 0"):
@@ -45,7 +45,7 @@ def main():
     Use Pexpect to change the logging buffer size (logging buffered <size>).
     Verify this change by examining the output of 'show run'.
     """
-    ip_addr = raw_input("Enter IP address: ")
+    ip_addr = input("Enter IP address: ")
     username = "pyclass"
     port = 22
 
@@ -69,7 +69,7 @@ def main():
     ssh_conn.expect(prompt)
 
     print("\n>>>>")
-    print(ssh_conn.before)
+    print(ssh_conn.before.decode())
     print(">>>>\n")
 
 

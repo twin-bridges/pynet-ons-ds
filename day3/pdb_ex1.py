@@ -10,7 +10,7 @@ print()
 return_val = my_func(10, 20, 30)
 print("Calling with three positional args: {}".format(return_val))
 
-import ipdb
+import ipdb  # noqa
 
 ipdb.set_trace()
 return_val = my_func(x=10, y=20)
