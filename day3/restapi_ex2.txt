@@ -5,7 +5,8 @@ NETBOX_TOKEN
 You can access this environment variable using the following code:
 
     import os
-    os.environ["NETBOX_TOKEN"]
+    token = os.environ["NETBOX_TOKEN"]
+    token = "Token {}".format(token)
 
 That environment variable will contain the NetBox token to use for authenticating
 to NetBox.
