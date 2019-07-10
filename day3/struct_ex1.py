@@ -25,16 +25,13 @@ def main():
 
     parsed_data = {}
     for route_entry in structured_data:
-        if route_entry["protocol"] == "L":
-            pass
-        else:
-            parsed_data[route_entry["network"]] = {}
-            parsed_data[route_entry["network"]]["nexthop_interface"] = route_entry[
-                "nexthop_if"
-            ]
-            parsed_data[route_entry["network"]]["nexthop_ip"] = route_entry[
-                "nexthop_ip"
-            ]
+        if route_entry["protocol"] != "L":
+            network = route_entry["network"]
+            nexthop_if = route_entry["nexthop_if"]
+            nexthop_ip = route_entry["nexthop_ip"]
+            parsed_data[network] = {}
+            parsed_data[network]["nexthop_interface"] = nexthop_if
+            parsed_data[network]["nexthop_ip"] = nexthop_ip
 
     pprint(parsed_data)
 
