@@ -15,7 +15,7 @@ print(os.path.isfile(__file__))
 
 print()
 print("Change directory into /tmp")
-os.chdir("/tmp")                                                                                                                                          
+os.chdir("/tmp")
 print(os.getcwd())
 
 print()

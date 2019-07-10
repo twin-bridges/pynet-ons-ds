@@ -1,5 +1,6 @@
 import subprocess
 
+
 def subprocess_wrapper(cmd_list):
     """Wrapper to execute subprocess including byte to UTF-8 conversion."""
     proc = subprocess.Popen(cmd_list, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -43,5 +44,3 @@ if __name__ == "__main__":
     cmd_list = ["./myscript.py"]
     std_out, std_err, return_code = subprocess_wrapper(cmd_list)
     output_printer(std_out, return_code)
-
-
