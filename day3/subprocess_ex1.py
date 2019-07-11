@@ -19,13 +19,14 @@ def process_disk_usage(df_output):
     Extract the file-system and disk usage from 'df -h' output.
 
     Could also use same "pattern" and re.search (while looping over the lines, but
-    re.find was a more elegant solution.
+    re.find was a more elegant solution).
     """
+    # Strip out the header line
     df_output = re.sub(r"^Filesystem.*Mounted on$", "", df_output, flags=re.M)
     pattern = r"^(\S+).*?(\d+%) .*"
     match = re.findall(pattern, df_output, flags=re.M)
     if not match:
-        raise ValueError()
+        raise ValueError("Failed to parse 'df' output correctly")
     return match
 
 
@@ -35,7 +36,7 @@ if __name__ == "__main__":
     std_out, _, _ = subprocess_wrapper(cmd_list)
     df_list = process_disk_usage(std_out)
 
-    # Convert list over to final form and print it (using list comprehension)
+    # Convert list over to final form and print it using a list comprehension
     disk_usage_list = [{"filesystem": fs, "usage": usage} for fs, usage in df_list]
     print()
     pprint(disk_usage_list)
