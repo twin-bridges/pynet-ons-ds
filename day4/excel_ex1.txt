@@ -1,0 +1,5 @@
+Read the Excel file into your Python program. Print the name of each sheet in the workbook.
+
+Loop over each sheet in the workbook printing the name, and quantity of rows and columns.
+
+Print the name of all devices on the "Devices" sheet.
