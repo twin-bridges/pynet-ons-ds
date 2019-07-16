@@ -1,0 +1,3 @@
+Using the function you wrote in the previous exercise, spawn processes using the concurrent futures ProcessPoolExecutor to execute the "show ip arp" command against the same set of devices (cisco1.lasthop.io, cisco2.lasthop.io, arista1.lasthop.io, arista1.lasthop.io).
+
+Rather than waiting for all processes to complete, print the results as they are returned from the devices.

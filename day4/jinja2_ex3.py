@@ -6,7 +6,12 @@ def main():
     env = Environment(undefined=StrictUndefined)
     env.loader = FileSystemLoader(".")
 
-    j2_vars = {"vrf_name": "blue", "rd_number": "100:1", "ipv4_af": True, "ipv6_af": True}
+    j2_vars = {
+        "vrf_name": "blue",
+        "rd_number": "100:1",
+        "ipv4_af": True,
+        "ipv6_af": True,
+    }
 
     print()
     template_file = "ios_vrf.j2"

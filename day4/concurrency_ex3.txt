@@ -1,0 +1,3 @@
+Using the function you wrote in the previous exercises, spawn threads using the concurrent futures ThreadPoolExecutor to execute the "show ip arp" command against the same set of devices (cisco1.lasthop.io, cisco2.lasthop.io, arista1.lasthop.io, arista1.lasthop.io).
+
+Ensure that all threads are completed before printing out the result from each thread. Do this WITHOUT using the `wait` function (hint: use a context manager!).

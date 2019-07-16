@@ -1,0 +1,52 @@
+from concurrent.futures import ProcessPoolExecutor, as_completed
+from getpass import getpass
+from netmiko import ConnectHandler
+
+
+PASSWORD = getpass()
+DEVICES = [
+    {
+        "host": "cisco1.lasthop.io",
+        "username": "pyclass",
+        "password": PASSWORD,
+        "device_type": "cisco_ios",
+    },
+    {
+        "host": "cisco2.lasthop.io",
+        "username": "pyclass",
+        "password": PASSWORD,
+        "device_type": "cisco_ios",
+    },
+    {
+        "host": "arista1.lasthop.io",
+        "username": "pyclass",
+        "password": PASSWORD,
+        "device_type": "arista_eos",
+    },
+    {
+        "host": "arista2.lasthop.io",
+        "username": "pyclass",
+        "password": PASSWORD,
+        "device_type": "arista_eos",
+    },
+]
+
+
+def show_command(dev, cmd):
+    conn = ConnectHandler(**dev)
+    output = conn.send_command(cmd)
+    conn.disconnect()
+    return output
+
+
+def main():
+    pool = ProcessPoolExecutor()
+    procs = []
+    for dev in DEVICES:
+        procs.append(pool.submit(show_command, dev, "show ip arp"))
+    for proc in as_completed(procs):
+        print(proc.result())
+
+
+if __name__ == "__main__":
+    main()

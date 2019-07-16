@@ -5,7 +5,9 @@ def main():
     wb = load_workbook("excel_wb.xlsx")
     print(f"Workbook Sheets: {wb.sheetnames}")
     for sheet in wb.sheetnames:
-        print(f"{sheet} sheet has {wb[sheet].max_row} rows and {wb[sheet].max_column} columns")
+        print(
+            f"{sheet} sheet has {wb[sheet].max_row} rows and {wb[sheet].max_column} columns"
+        )
 
     devices = wb["Devices"]
     device_list = []
