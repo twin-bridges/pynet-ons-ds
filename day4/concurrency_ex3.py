@@ -40,7 +40,7 @@ def show_command(dev, cmd):
 
 
 def main():
-    with ThreadPoolExecutor() as pool:
+    with ThreadPoolExecutor(max_workers=8) as pool:
         threads = []
         for dev in DEVICES:
             threads.append(pool.submit(show_command, dev, "show ip arp"))
