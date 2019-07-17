@@ -12,6 +12,8 @@ import random
 
 
 AMOUNT_OF_MATHS = 8
+# Note: max_workers  will default to num processors on maching * 5 if not given
+MAX_WORKERS = 8
 
 
 def do_maths():
@@ -21,7 +23,7 @@ def do_maths():
 
 
 def main():
-    pool = ProcessPoolExecutor()
+    pool = ProcessPoolExecutor(max_workers=MAX_WORKERS)
     procs = []
     for _ in range(AMOUNT_OF_MATHS):
         procs.append(pool.submit(do_maths))
