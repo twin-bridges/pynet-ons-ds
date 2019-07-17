@@ -1,0 +1,7 @@
+
+Django Ex2
+-----------
+
+Set the vendor field of each NetworkDevice to the appropriate vendor. Save this
+field to the database.
+

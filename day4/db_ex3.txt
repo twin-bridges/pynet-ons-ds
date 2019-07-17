@@ -1,0 +1,9 @@
+
+Django Ex3
+-----------
+
+Create two new test/fictional NetworkDevices in the database. 
+
+Use both direct object creation and the .get_or_create() method to create
+the devices.
+

@@ -1,0 +1,42 @@
+'''
+Update the NetworkDevice objects such that each NetworkDevice links to the 
+correct credentials.
+'''
+
+# from ~/DJANGOX/djproject
+
+$ python manage.py shell
+
+>>>
+>>> from net_system.models import NetworkDevice,Credentials
+>>> net_devices = NetworkDevice.objects.all()
+>>> creds = Credentials.objects.all()
+>>> 
+>>> creds
+[<Credentials: pyclass>, <Credentials: admin1>]
+>>> std_creds = creds[0]
+>>> arista_creds = creds[1]
+>>> std_creds
+<Credentials: pyclass>
+>>> arista_creds
+<Credentials: admin1>
+>>> 
+>>> for a_device in net_devices:
+...   if 'arista' in a_device.device_type:
+...     a_device.credentials = arista_creds
+...   else:
+...     a_device.credentials = std_creds
+...   a_device.save()
+... 
+>>> 
+>>> for a_device in net_devices:
+...   print a_device, a_device.credentials
+... 
+pynet-rtr1 pyclass
+pynet-sw1 admin1
+pynet-sw2 admin1
+pynet-sw3 admin1
+pynet-sw4 admin1
+juniper-srx pyclass
+pynet-rtr2 pyclass
+

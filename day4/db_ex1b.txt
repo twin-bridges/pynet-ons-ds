@@ -1,0 +1,9 @@
+
+Django Ex1
+-----------
+
+See django_notes.txt file for assistance on these exercises.  
+
+1b. Add the seven NetworkDevice objects and two Credentials objects into your database. 
+
+

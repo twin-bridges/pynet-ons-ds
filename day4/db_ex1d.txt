@@ -1,0 +1,7 @@
+
+Django Ex1
+-----------
+
+1d. Update the NetworkDevice objects such that each NetworkDevice links to the 
+    correct Credentials.
+

@@ -1,0 +1,8 @@
+
+Django Ex1a
+-----------
+
+See django_notes.txt file for assistance on these exercises.  
+
+1a. Initialize your Django database. 
+
