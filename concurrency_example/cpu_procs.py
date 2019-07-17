@@ -28,6 +28,8 @@ def main():
     for _ in range(AMOUNT_OF_MATHS):
         procs.append(pool.submit(do_maths))
     wait(procs)
+    for proc in procs:
+        print(proc.result())
 
 
 if __name__ == "__main__":

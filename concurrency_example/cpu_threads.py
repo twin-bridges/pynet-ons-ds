@@ -28,6 +28,8 @@ def main():
     for _ in range(AMOUNT_OF_MATHS):
         threads.append(pool.submit(do_maths))
     wait(threads)
+    for thread in threads:
+        print(thread.result())
 
 
 if __name__ == "__main__":
