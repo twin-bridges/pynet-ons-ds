@@ -10,3 +10,4 @@ script:
   - pylama .
   - black --check .
   - ./check_line_lengths.sh 
+  - py.test -s -v day4/test_ex1.py
