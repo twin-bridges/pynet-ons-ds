@@ -6,13 +6,13 @@ from netmiko import ConnectHandler
 PASSWORD = getpass()
 DEVICES = [
     {
-        "host": "cisco1.lasthop.io",
+        "host": "cisco3.lasthop.io",
         "username": "pyclass",
         "password": PASSWORD,
         "device_type": "cisco_ios",
     },
     {
-        "host": "cisco2.lasthop.io",
+        "host": "cisco4.lasthop.io",
         "username": "pyclass",
         "password": PASSWORD,
         "device_type": "cisco_ios",
@@ -42,10 +42,14 @@ def show_command(dev, cmd):
 def main():
     pool = ProcessPoolExecutor(max_workers=8)
     procs = []
+
     for dev in DEVICES:
         procs.append(pool.submit(show_command, dev, "show ip arp"))
+
     for proc in as_completed(procs):
+        print()
         print(proc.result())
+        print()
 
 
 if __name__ == "__main__":
