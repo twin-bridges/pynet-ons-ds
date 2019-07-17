@@ -6,3 +6,5 @@ install:
   - pip install -r requirements.txt
 script: 
   - pylama .
+  - black --check .
+  - ./check_line_lengths.sh 
