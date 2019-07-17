@@ -1,7 +1,5 @@
 # content of test_sample.py
 import pytest
-from getpass import getpass
-from netmiko import ConnectHandler
 import sys
 
 
