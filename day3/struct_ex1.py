@@ -5,13 +5,12 @@ from pprint import pprint
 
 def load_data_from_string(filename):
     with open(filename, "r") as infile:
-        infile = infile.read()
-    structured_data = json.loads(infile)
+        structured_data = json.load(infile)
     return structured_data
 
 
 def main():
-    structured_data = load_data_from_string("struct_data1.txt")
+    structured_data = load_data_from_string("struct_data1.json")
     pprint(structured_data)
     print()
 
