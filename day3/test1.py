@@ -4,7 +4,7 @@ import re
 cmd_list = ["df", "-h"]
 std_out, std_err, return_code = subprocess_wrapper(cmd_list)
 
-output = re.sub(r"Filesystem.*on", "", std_out) 
+output = re.sub(r"Filesystem.*on", "", std_out)
 match = re.findall(r"^(\S+)\s*.*?(\d+%)\s.*$", output, flags=re.M)
 
 my_list = []
